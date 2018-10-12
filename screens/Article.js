@@ -6,14 +6,14 @@ import DataMain from './DataMain';
 import { Actions } from 'react-native-router-flux';
 
 
-const Display = (props) => {
-  return (
-    <View
-      style={styles.display}>
-      <Text style={styles.displayText}>{props.label}</Text>
-    </View>
-  )
-}
+// const Display = (props) => {
+//   return (
+//     <View
+//       style={styles.display}>
+//       <Text style={styles.displayText}>{props.label}</Text>
+//     </View>
+//   )
+// }
 
 const UpdateButton = (props) => {
   return (
@@ -38,13 +38,24 @@ class Article extends Component {
          });
   }
 
+  renderId() {
+    const tmp = this.state.inputdata
+      return (
+            <View
+              style={styles.display}>
+              <Text style={styles.displayText}>{tmp.id}</Text>
+            </View>
+
+    );
+  }
+
   renderData() {
     // return this.state.inputdata.map((data) => {
     //   return <DataMain key={data.id} dataInfo={data} />
     // });
     const tmp = this.state.inputdata
       return (
-      <DataMain dataInfo={tmp} />
+        <DataMain dataInfo={tmp} />
     );
   }
 
@@ -57,7 +68,9 @@ class Article extends Component {
 
         <View style={styles.box2}>
           <View style={styles.box3}>
-            <Display label={'score'}/>
+            <View style={styles.display}>
+              {this.renderId()}
+            </View>
             <UpdateButton label={'update'}/>
           </View>
         </View>
@@ -95,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 3,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    //borderWidth: 1,
   },
   updateButton: {
     flex: 1,
@@ -104,7 +117,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   displayText: {
-    fontSize: 20,
+    fontSize: 100,
   },
   updateButtonText: {
     fontSize: 20,
