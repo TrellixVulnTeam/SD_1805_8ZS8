@@ -6,6 +6,9 @@ import Past_data from './screens/Past_data';
 import Records from './screens/Records';
 import Settings from './screens/Settings';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+//import Icon from 'react-native-vector-icons/AntDesign';
+//import Icon from 'react-native-vector-icons/AntDesign';
+
 
 const styles = {
   tabIconContainerStyle: {
@@ -13,9 +16,9 @@ const styles = {
     alignItems: 'center',
   },
   tabIconStyle: {
-    width: 24,
-    height: 24,
-    fontSize: 24,
+    width: 35,
+    height: 35,
+    fontSize: 35,
   },
 }
 
@@ -40,8 +43,8 @@ const RouterComponent = () => {
         <Scene
           key='article'
           component={Article}
-          title='article'
-          iconName='collections'
+          title='Home'
+          iconName='home'
           initial
           iconColor='red'
           icon={TabBarIcon}
@@ -49,23 +52,23 @@ const RouterComponent = () => {
         <Scene
           key='past_data'
           component={Past_data}
-          title='data'
-          iconName='textsms'
+          title='Data'
+          iconName='equalizer'
           iconColor='red'
           icon={TabBarIcon}
         />
         <Scene
           key='records'
           component={Records}
-          title='records'
-          iconName='accessibility'
+          title='Records'
+          iconName='list'
           iconColor='red'
           icon={TabBarIcon}
         />
         <Scene
           key='settings'
           component={Settings}
-          title='settings'
+          title='Settings'
           iconName='settings'
           iconColor='red'
           icon={TabBarIcon}
