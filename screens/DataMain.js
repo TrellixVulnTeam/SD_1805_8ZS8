@@ -5,7 +5,7 @@ const ImageDisplay = ({tmp}) => {
   let src = '';
   if (tmp == 6) {
     //src = require('./sample.png');
-    src = require('./Image/tipi.gif')
+    src = require('./Image/G.gif')
   } else {
     src = require('./Image/poinco.png');
   }
@@ -40,7 +40,7 @@ const styles = {
   wrapperStyle: {
     flexDirection: 'column',
     justifyContent: 'space-between',
-    padding: 20
+    padding: 10
   },
   textStyle: {
     fontSize: 18,
@@ -49,6 +49,8 @@ const styles = {
   imgScreen: {
     alignItems: 'center',
     justifyContent: 'center',
+    // width: '100%',
+    // height: '100%',
     width: '100%',
     height: '100%',
     flexDirection: 'column',

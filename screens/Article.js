@@ -102,13 +102,11 @@ const styles = StyleSheet.create({
   box3: {
     flex: 1,
     flexDirection: 'row',
-    //borderWidth: 1,
   },
   display: {
     flex: 3,
     alignItems: 'center',
     justifyContent: 'center',
-    //borderWidth: 1,
   },
   updateButton: {
     flex: 1,
