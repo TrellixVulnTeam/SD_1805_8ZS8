@@ -1,22 +1,14 @@
 import React from 'react';
-import { View} from 'react-native';
+import { 
+  View,
+  StyleSheet
+} from 'react-native';
 import { Scene, Router, Tabs } from 'react-native-router-flux';
 import Home from './screens/Home';
 import Settings from './screens/Settings';
 import RailsViews from './screens/RailsViews';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const styles = {
-  tabIconContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  tabIconStyle: {
-    width: 35,
-    height: 35,
-    fontSize: 35,
-  },
-}
 
 const TabBarIcon = props => (
   <View style={styles.tabIconContainerStyle}>
@@ -30,7 +22,7 @@ const TabBarIcon = props => (
 
 const RouterComponent = () => {
   return (
-    <Router>
+    <Router navigationBarStyle={styles.navBar} titleStyle={styles.navTitle} sceneStyle={styles.routerScene}>
       <Tabs
         key='root'
         swipeEnabled={ true }
@@ -72,4 +64,26 @@ const RouterComponent = () => {
   )
 }
 
+const styles = StyleSheet.create({
+  tabIconContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  tabIconStyle: {
+    width: 35,
+    height: 35,
+    fontSize: 35,
+  },
+  navBar: {
+    backgroundColor: '#45a2ff'
+  },
+  navTitle: {
+    color: 'white'
+  },
+  routerScene: {
+    // paddingTop: Navigator.NavigationBar.Styles.General.NavBarHeight,
+  }
+})
+
 export default RouterComponent;
+
