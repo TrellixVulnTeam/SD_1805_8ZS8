@@ -3,17 +3,20 @@ import { WebView } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
 
-export default class yahoo extends Component {
-
+export default class RailsView extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      url: props.url
+    }
   }
 
   render() {
+    var {url} = this.state
+
     return (
       <WebView
-        source={{uri: 'https://www.yahoo.co.jp/'}}
+        source={{ uri: url}}
         style={{marginTop: 20}}/>
     );
   }

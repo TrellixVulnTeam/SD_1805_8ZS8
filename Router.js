@@ -2,9 +2,8 @@ import React from 'react';
 import { View} from 'react-native';
 import { Scene, Router, Tabs } from 'react-native-router-flux';
 import Home from './screens/Home';
-import Past_data from './screens/Past_data';
-import Records from './screens/Records';
 import Settings from './screens/Settings';
+import RailsViews from './screens/RailsViews';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 //import Icon from 'react-native-vector-icons/AntDesign';
 //import Icon from 'react-native-vector-icons/AntDesign';
@@ -50,14 +49,16 @@ const RouterComponent = () => {
         />
         <Scene
           key='past_data'
-          component={Past_data}
+          component={RailsViews}
+          url="https://www.google.co.jp/"
           title='Data'
           iconName='equalizer'
           icon={TabBarIcon}
         />
         <Scene
           key='records'
-          component={Records}
+          component={RailsViews}
+          url="https://www.yahoo.co.jp/"
           title='Records'
           iconName='list'
           icon={TabBarIcon}
