@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { 
+import {
   Text,
   View,
   StyleSheet,
@@ -11,15 +11,6 @@ import DataMain from './DataMain';
 import { Actions } from 'react-native-router-flux';
 
 
-// const Display = (props) => {
-//   return (
-//     <View
-//       style={styles.display}>
-//       <Text style={styles.displayText}>{props.label}</Text>
-//     </View>
-//   )
-// }
-
 const UpdateButton = (props) => {
   return (
     <TouchableOpacity
@@ -30,53 +21,36 @@ const UpdateButton = (props) => {
 }
 
 class Home extends Component {
-
-  //inputdataを初期化
-  state = {
-    inputdata: []
+  constructor(props) {
+    super(props);
+    //inputdataを初期化
+    this.state = {
+      inputdata: []
+    }
   }
 
   componentWillMount() {
     axios.get('https://mysterious-caverns-19353.herokuapp.com/users/latest')
-         .then((res) => {
-           this.setState({ inputdata: res.data });
-         });
-  }
-
-  renderId() {
-    const tmp = this.state.inputdata
-      return (
-            <View
-              style={styles.display}>
-              <Text style={styles.displayText}>{tmp.id}</Text>
-            </View>
-
-    );
-  }
-
-  renderData() {
-    // return this.state.inputdata.map((data) => {
-    //   return <DataMain key={data.id} dataInfo={data} />
-    // });
-    const tmp = this.state.inputdata
-      return (
-        <DataMain dataInfo={tmp} />
-    );
+      .then((res) => {
+        this.setState({ inputdata: res.data });
+      });
   }
 
   render() {
+    const { inputdata } = this.state
+
     return (
       <View style={styles.container}>
         <View style={styles.box1}>
-            {this.renderData()}
+          <DataMain dataInfo={inputdata} />
         </View>
 
         <View style={styles.box2}>
           <View style={styles.box3}>
             <View style={styles.display}>
-              {this.renderId()}
+              <Text style={styles.displayText}>{inputdata.id}</Text>
             </View>
-            <UpdateButton label={'update'}/>
+            <UpdateButton label={'update'} />
           </View>
         </View>
 
@@ -87,7 +61,7 @@ class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     backgroundColor: '#fff',
   },
   text: {
