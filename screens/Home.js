@@ -8,9 +8,6 @@ import {
 import axios from 'axios';
 import DataMain from './DataMain';
 
-import { Actions } from 'react-native-router-flux';
-
-
 const UpdateButton = (props) => {
   return (
     <TouchableOpacity
