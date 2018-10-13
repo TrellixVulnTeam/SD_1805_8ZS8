@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Text,View,TextInput,Button,StyleSheet,TouchableOpacity } from 'react-native';
+import { 
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity
+} from 'react-native';
 import axios from 'axios';
 import DataMain from './DataMain';
 
@@ -24,7 +29,7 @@ const UpdateButton = (props) => {
   )
 }
 
-class Article extends Component {
+class Home extends Component {
 
   //inputdataを初期化
   state = {
@@ -126,4 +131,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Article;
+export default Home;
