@@ -5,9 +5,6 @@ import Home from './screens/Home';
 import Settings from './screens/Settings';
 import RailsViews from './screens/RailsViews';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-//import Icon from 'react-native-vector-icons/AntDesign';
-//import Icon from 'react-native-vector-icons/AntDesign';
-
 
 const styles = {
   tabIconContainerStyle: {
@@ -52,15 +49,15 @@ const RouterComponent = () => {
           component={RailsViews}
           url="https://www.google.co.jp/"
           title='Data'
-          iconName='equalizer'
+          iconName='timeline'
           icon={TabBarIcon}
         />
         <Scene
           key='records'
           component={RailsViews}
           url="https://www.yahoo.co.jp/"
-          title='Records'
-          iconName='list'
+          title='Record Room'
+          iconName='people'
           icon={TabBarIcon}
         />
         <Scene
