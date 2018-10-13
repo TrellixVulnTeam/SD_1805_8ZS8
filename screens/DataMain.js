@@ -1,37 +1,43 @@
 import React, { Component } from 'react';
-import { View, Text,Image} from 'react-native';
+import { View, Text, Image } from 'react-native';
 
-const ImageDisplay = ({tmp}) => {
+const ImageDisplay = (score) => {
   let src = '';
-  if (tmp == 6) {
-    //src = require('./sample.png');
-    src = require('./Image/G.gif')
-  } else {
-    src = require('./Image/poinco.png');
+
+  switch (score) {
+    case 6:
+      src = require('./Image/G.gif')
+      break;
+    case 1:
+      src = require('./Image/G.gif')
+      break;
+    default:
+      src = require('./Image/poinco.png');
+      break;
   }
-  //console.log(src)
+
   return (
-        // <Image
-        //   source={src}
-        //   style={{ width: 800, height: 500, backgroundColor: 'white' }}
-        //   />
-        <Image
-          source={src}
-          style={styles.imgScreen}
-          />
+    // <Image
+    //   source={src}
+    //   style={{ width: 800, height: 500, backgroundColor: 'white' }}
+    //   />
+    <Image
+      source={src}
+      style={styles.imgScreen}
+    />
   )
 }
 
 
-const DataMain = ({ dataInfo }) => {
+const DataMain = (dataInfo) => {
   const { id, name } = dataInfo;
   const { textStyle, wrapperStyle } = styles;
 
   return (
     <View style={wrapperStyle}>
-        <ImageDisplay tmp={id}/>
-        { /* <Text style={textStyle}>{id}</Text> */}
-        { /* <Text style={textStyle}>{name}</Text> */}
+      <ImageDisplay score={id} />
+      { /* <Text style={textStyle}>{id}</Text> */}
+      { /* <Text style={textStyle}>{name}</Text> */}
     </View>
   )
 }
