@@ -6,13 +6,13 @@ const ImageDisplay = (score) => {
 
   switch (score) {
     case 6:
-      src = require('./Image/G.gif')
+      src = require('../assets/images/G.gif')
       break;
     case 1:
-      src = require('./Image/G.gif')
+      src = require('../assets/images/G.gif')
       break;
     default:
-      src = require('./Image/poinco.png');
+      src = require('../assets/images/poinco.png');
       break;
   }
 
