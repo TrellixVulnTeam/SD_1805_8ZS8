@@ -1,43 +1,27 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 
-const ImageDisplay = (score) => {
+const DataMain = (props) => {
+  const { id, name } = props.dataInfo;
+  const { wrapperStyle } = styles;
+
+  //スコアによって表示画像を変化
   let src = '';
-
-  switch (score) {
-    case 6:
-      src = require('../assets/images/G.gif')
-      break;
-    case 1:
-      src = require('../assets/images/G.gif')
-      break;
-    default:
-      src = require('../assets/images/poinco.png');
-      break;
+  const score = id //実際は違う
+  const comment = name //実際は違う
+  if (score >= 90) {
+    src = require('../assets/images/G.gif')
+  } else if (score >= 60) {
+    src = require('../assets/images/G.gif')
+  } else {
+    src = require('../assets/images/rabit.gif');
   }
 
   return (
-    // <Image
-    //   source={src}
-    //   style={{ width: 800, height: 500, backgroundColor: 'white' }}
-    //   />
-    <Image
-      source={src}
-      style={styles.imgScreen}
-    />
-  )
-}
-
-
-const DataMain = (dataInfo) => {
-  const { id, name } = dataInfo;
-  const { textStyle, wrapperStyle } = styles;
-
-  return (
     <View style={wrapperStyle}>
-      <ImageDisplay score={id} />
-      { /* <Text style={textStyle}>{id}</Text> */}
-      { /* <Text style={textStyle}>{name}</Text> */}
+      <ImageBackground source={src} style={styles.imgScreen} resizeMode='cover'>
+        <Text style={styles.textStyle}>{comment}</Text>
+      </ImageBackground>
     </View>
   )
 }
@@ -49,14 +33,12 @@ const styles = {
     padding: 10
   },
   textStyle: {
-    fontSize: 18,
-    fontWeight: "600"
+    fontSize: 30,
+    fontWeight: "600",
   },
   imgScreen: {
     alignItems: 'center',
     justifyContent: 'center',
-    // width: '100%',
-    // height: '100%',
     width: '100%',
     height: '100%',
     flexDirection: 'column',

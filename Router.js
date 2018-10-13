@@ -47,7 +47,7 @@ const RouterComponent = () => {
         <Scene
           key='records'
           component={RailsViews}
-          url="https://www.yahoo.co.jp/"
+          url="https://mysterious-caverns-19353.herokuapp.com"
           title='Record Room'
           iconName='people'
           icon={TabBarIcon}

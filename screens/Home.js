@@ -35,20 +35,19 @@ class Home extends Component {
 
   render() {
     const { inputdata } = this.state
-
+    console.log("call render")
+    console.log(inputdata)
     return (
       <View style={styles.container}>
-        <View style={styles.box1}>
+        <View style={styles.box_top}>
           <DataMain dataInfo={inputdata} />
         </View>
 
-        <View style={styles.box2}>
-          <View style={styles.box3}>
-            <View style={styles.display}>
-              <Text style={styles.displayText}>{inputdata.id}</Text>
-            </View>
-            <UpdateButton label={'update'} />
+        <View style={styles.box_bottom}>
+          <View style={styles.box_score}>
+            <Text style={styles.displayText}>{inputdata.id}</Text>
           </View>
+          <UpdateButton label={'update'} />
         </View>
 
       </View>
@@ -65,21 +64,16 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: 'black',
   },
-  box1: {
+  box_top: {
     flex: 3,
+    borderBottomWidth: 1,
+  },
+  box_bottom: {
+    flex: 1,
     backgroundColor: 'white',
-    borderWidth: 1,
-  },
-  box2: {
-    flex: 1,
-    backgroundColor: 'white'
-
-  },
-  box3: {
-    flex: 1,
     flexDirection: 'row',
   },
-  display: {
+  box_score: {
     flex: 3,
     alignItems: 'center',
     justifyContent: 'center',
