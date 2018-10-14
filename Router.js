@@ -1,26 +1,14 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { 
+  View,
+  StyleSheet
+} from 'react-native';
 import { Scene, Router, Tabs } from 'react-native-router-flux';
-import Article from './screens/Article';
-import Past_data from './screens/Past_data';
-import Records from './screens/Records';
+import Home from './screens/Home';
 import Settings from './screens/Settings';
+import RailsViews from './screens/RailsViews';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-//import Icon from 'react-native-vector-icons/AntDesign';
-//import Icon from 'react-native-vector-icons/AntDesign';
 
-
-const styles = {
-  tabIconContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  tabIconStyle: {
-    width: 35,
-    height: 35,
-    fontSize: 35,
-  },
-}
 
 const TabBarIcon = props => (
   <View style={styles.tabIconContainerStyle}>
@@ -34,35 +22,34 @@ const TabBarIcon = props => (
 
 const RouterComponent = () => {
   return (
-    <Router>
+    <Router navigationBarStyle={styles.navBar} titleStyle={styles.navTitle} sceneStyle={styles.routerScene}>
       <Tabs
         key='root'
         swipeEnabled={ true }
         animationEnabled={ true }
       >
         <Scene
-          key='article'
-          component={Article}
+          key='home'
+          component={Home}
           title='Home'
           iconName='home'
-          initial
-          iconColor='red'
           icon={TabBarIcon}
+          initial
         />
         <Scene
           key='past_data'
-          component={Past_data}
+          component={RailsViews}
+          url="https://www.google.co.jp/"
           title='Data'
-          iconName='equalizer'
-          iconColor='red'
+          iconName='timeline'
           icon={TabBarIcon}
         />
         <Scene
           key='records'
-          component={Records}
-          title='Records'
-          iconName='list'
-          iconColor='red'
+          component={RailsViews}
+          url="https://mysterious-caverns-19353.herokuapp.com"
+          title='Record Room'
+          iconName='people'
           icon={TabBarIcon}
         />
         <Scene
@@ -70,7 +57,6 @@ const RouterComponent = () => {
           component={Settings}
           title='Settings'
           iconName='settings'
-          iconColor='red'
           icon={TabBarIcon}
         />
       </Tabs>
@@ -78,4 +64,26 @@ const RouterComponent = () => {
   )
 }
 
+const styles = StyleSheet.create({
+  tabIconContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  tabIconStyle: {
+    width: 35,
+    height: 35,
+    fontSize: 35,
+  },
+  navBar: {
+    backgroundColor: '#45a2ff'
+  },
+  navTitle: {
+    color: 'white'
+  },
+  routerScene: {
+    // paddingTop: Navigator.NavigationBar.Styles.General.NavBarHeight,
+  }
+})
+
 export default RouterComponent;
+

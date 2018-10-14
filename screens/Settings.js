@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { WebView } from 'react-native';
 
-import { Actions } from 'react-native-router-flux';
-
 export default class yahoo extends Component {
 
   constructor(props) {
