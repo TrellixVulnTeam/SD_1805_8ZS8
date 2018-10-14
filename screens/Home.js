@@ -3,7 +3,9 @@ import {
   Text,
   View,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView,
+  RefreshControl
 } from 'react-native';
 import axios from 'axios';
 import DataMain from './DataMain';
@@ -22,7 +24,8 @@ class Home extends Component {
     super(props);
     //inputdataを初期化
     this.state = {
-      inputdata: []
+      inputdata: [],
+      refreshing: false
     }
   }
 
@@ -33,29 +36,56 @@ class Home extends Component {
       });
   }
 
+  async fetchData () {
+        axios.get('https://mysterious-caverns-19353.herokuapp.com/users/latest')
+         .then((res) => {
+           this.setState({ inputdata: res.data });
+         })
+  }
+
+_onRefresh = () => {
+   this.setState({refreshing: true});
+   this.fetchData().then(() => {
+     this.setState({refreshing: false});
+   });
+ }
+
   render() {
     const { inputdata } = this.state
     console.log("call render")
     console.log(inputdata)
     return (
-      <View style={styles.container}>
-        <View style={styles.box_top}>
-          <DataMain dataInfo={inputdata} />
-        </View>
-
-        <View style={styles.box_bottom}>
-          <View style={styles.box_score}>
-            <Text style={styles.displayText}>{inputdata.id}</Text>
+      <ScrollView
+        contentContainerStyle={styles.contentContainer}
+        refreshControl={
+          <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this._onRefresh}
+          />
+          }
+        >
+        <View style={styles.container}>
+          <View style={styles.box_top}>
+            <DataMain dataInfo={inputdata} />
           </View>
-          <UpdateButton label={'update'} />
-        </View>
 
-      </View>
+          <View style={styles.box_bottom}>
+            <View style={styles.box_score}>
+              <Text style={styles.displayText}>{inputdata.id}</Text>
+            </View>
+            <UpdateButton label={'update'} />
+          </View>
+
+        </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  contentContainer: {
+  flex: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
