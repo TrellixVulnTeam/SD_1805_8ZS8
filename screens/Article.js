@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text,View,TextInput,Button,StyleSheet,TouchableOpacity } from 'react-native';
+import { Text,View,TextInput,Button,StyleSheet,TouchableOpacity,ScrollView, RefreshControl} from 'react-native';
 import axios from 'axios';
 import DataMain from './DataMain';
 
@@ -24,12 +24,14 @@ const UpdateButton = (props) => {
   )
 }
 
+
 class Article extends Component {
 
-  //inputdataを初期化
   state = {
-    inputdata: []
+    inputdata: [],
+    refreshing: false
   }
+
 
   componentWillMount() {
     axios.get('https://mysterious-caverns-19353.herokuapp.com/users/latest')
@@ -50,40 +52,67 @@ class Article extends Component {
   }
 
   renderData() {
-    // return this.state.inputdata.map((data) => {
-    //   return <DataMain key={data.id} dataInfo={data} />
-    // });
     const tmp = this.state.inputdata
       return (
         <DataMain dataInfo={tmp} />
     );
   }
 
+  async fetchData () {
+          axios.get('https://mysterious-caverns-19353.herokuapp.com/users/latest')
+           .then((res) => {
+             this.setState({ inputdata: res.data });
+           })
+    }
+
+
+  _onRefresh = () => {
+     this.setState({refreshing: true});
+     this.fetchData().then(() => {
+       this.setState({refreshing: false});
+     });
+   }
+
+
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.box1}>
-            {this.renderData()}
-        </View>
+      //<View style={styles.container}>
+        <ScrollView
+          contentContainerStyle={styles.contentContainer}
+          refreshControl={
+            <RefreshControl
+              refreshing={this.state.refreshing}
+              onRefresh={this._onRefresh}
+            />
+          }
+        >
+          <View style={styles.container}>
+              <View style={styles.box1}>
+                  {this.renderData()}
+              </View>
 
-        <View style={styles.box2}>
-          <View style={styles.box3}>
-            <View style={styles.display}>
-              {this.renderId()}
-            </View>
-            <UpdateButton label={'update'}/>
+              <View style={styles.box2}>
+                <View style={styles.box3}>
+                  <View style={styles.display}>
+                    {this.renderId()}
+                  </View>
+                  <UpdateButton label={'update'}/>
+                </View>
+              </View>
           </View>
-        </View>
-
-      </View>
+        </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    flex: 1,
+  },
   container: {
     flex:1,
     backgroundColor: '#fff',
+    //flexDirection: 'column',
   },
   text: {
     fontSize: 24,
@@ -93,6 +122,7 @@ const styles = StyleSheet.create({
     flex: 3,
     backgroundColor: 'white',
     borderWidth: 1,
+    //: 'column',
   },
   box2: {
     flex: 1,
