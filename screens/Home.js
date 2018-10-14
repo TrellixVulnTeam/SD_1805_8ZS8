@@ -10,19 +10,18 @@ import {
 import axios from 'axios';
 import DataMain from './DataMain';
 
-const UpdateButton = (props) => {
-  return (
-    <TouchableOpacity
-      style={styles.updateButton}>
-      <Text style={styles.updateButtonText}>{props.label}</Text>
-    </TouchableOpacity>
-  )
-}
+// const UpdateButton = (props) => {
+//   return (
+//     <TouchableOpacity
+//       style={styles.updateButton}>
+//       <Text style={styles.updateButtonText}>{props.label}</Text>
+//     </TouchableOpacity>
+//   )
+// }
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    //inputdataを初期化
     this.state = {
       inputdata: [],
       refreshing: false
@@ -70,10 +69,7 @@ _onRefresh = () => {
           </View>
 
           <View style={styles.box_bottom}>
-            <View style={styles.box_score}>
-              <Text style={styles.displayText}>{inputdata.id}</Text>
-            </View>
-            <UpdateButton label={'update'} />
+            <Text style={styles.displayText}>{inputdata.id}</Text>
           </View>
 
         </View>
@@ -102,28 +98,31 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     flexDirection: 'row',
-  },
-  box_score: {
-    flex: 3,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  updateButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-  },
+  // box_score: {
+  //   flex: 3,
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
+  // updateButton: {
+  //   flex: 1,
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   borderWidth: 1,
+  // },
   displayText: {
     fontSize: 100,
+    //textAlign: 'center',
   },
-  updateButtonText: {
-    fontSize: 20,
-  },
-  textStyle: {
-    fontSize: 18,
-    fontWeight: "600"
-  },
+  // updateButtonText: {
+  //   fontSize: 20,
+  // },
+  // textStyle: {
+  //   fontSize: 18,
+  //   fontWeight: "600"
+  // },
 });
 
 export default Home;
