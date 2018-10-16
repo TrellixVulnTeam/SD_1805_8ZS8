@@ -10,6 +10,15 @@ import {
 import axios from 'axios';
 import DataMain from './DataMain';
 
+const LabelBox = (props) => {
+  const flex = props.flex ? props.flex: 1
+  return (
+    <View style={[styles.labelBox, {flex: flex}]}>
+      <Text style={styles.labelText}>{props.label}</Text>
+    </View>
+  )
+}
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -59,11 +68,31 @@ _onRefresh = () => {
             <DataMain dataInfo={inputdata} />
           </View>
 
-          <View style={styles.box_bottom}>
-            <Text style={styles.displayText}>{inputdata.id}</Text>
+
+            <View style={styles.labelLine}>
+              <LabelBox label={'room'} />
+              <LabelBox label={'smell'} />
+              <LabelBox label={'dust'} />
+              <LabelBox flex={2} label={'Total'} />
+            </View>
+
+            <View style={styles.scoreLine}>
+              <View style={[styles.scoreBox,{flex: 1}]}>
+                <Text style={styles.scoreText}>{inputdata.id}</Text>
+              </View>
+              <View style={[styles.scoreBox,{flex: 1}]}>
+                <Text style={styles.scoreText}>{inputdata.id}</Text>
+              </View>
+              <View style={[styles.scoreBox,{flex: 1}]}>
+                <Text style={styles.scoreText}>{inputdata.id}</Text>
+              </View>
+              <View style={[styles.scoreBox,{flex: 2}]}>
+                <Text style={styles.totalscoreText}>{inputdata.id}</Text>
+              </View>
+            </View>
           </View>
 
-        </View>
+
       </ScrollView>
     );
   }
@@ -82,20 +111,40 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   box_top: {
-    flex: 3,
+    flex: 9,
     borderBottomWidth: 1,
   },
-  box_bottom: {
+  labelLine: {
     flex: 1,
-    backgroundColor: 'white',
     flexDirection: 'row',
+  },
+  scoreLine: {
+    flex: 3,
+    flexDirection: 'row',
+  },
+  labelBox: {
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row',
+    width: '100%',
+    height: '100%',
   },
-  displayText: {
-    fontSize: 100,
+  scoreBox: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    width: '100%',
+    height: '100%',
   },
-
+  labelText: {
+    fontSize: 25,
+  },
+  scoreText: {
+    fontSize: 50,
+  },
+  totalscoreText: {
+    fontSize: 75,
+  },
 });
 
 export default Home;
