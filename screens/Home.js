@@ -65,33 +65,36 @@ _onRefresh = () => {
         >
         <View style={styles.container}>
           <View style={styles.box_top}>
-            <DataMain dataInfo={inputdata} />
+              <View style={styles.imgdisplay}>
+                <DataMain dataInfo={inputdata} />
+              </View>
+              <View style={styles.imgdisplay}>
+                <DataMain dataInfo={inputdata} />
+              </View>
           </View>
 
-
-            <View style={styles.labelLine}>
-              <LabelBox label={'room'} />
-              <LabelBox label={'smell'} />
-              <LabelBox label={'dust'} />
-              <LabelBox flex={2} label={'Total'} />
-            </View>
-
-            <View style={styles.scoreLine}>
-              <View style={[styles.scoreBox,{flex: 1}]}>
-                <Text style={styles.scoreText}>{inputdata.id}</Text>
-              </View>
-              <View style={[styles.scoreBox,{flex: 1}]}>
-                <Text style={styles.scoreText}>{inputdata.id}</Text>
-              </View>
-              <View style={[styles.scoreBox,{flex: 1}]}>
-                <Text style={styles.scoreText}>{inputdata.id}</Text>
-              </View>
-              <View style={[styles.scoreBox,{flex: 2}]}>
-                <Text style={styles.totalscoreText}>{inputdata.id}</Text>
-              </View>
-            </View>
+          <View style={styles.labelLine}>
+            <LabelBox label={'room'} />
+            <LabelBox label={'smell'} />
+            <LabelBox label={'dust'} />
+            <LabelBox flex={2} label={'Total'} />
           </View>
 
+          <View style={styles.scoreLine}>
+            <View style={[styles.scoreBox,{flex: 1}]}>
+              <Text style={styles.scoreText}>{inputdata.id}</Text>
+            </View>
+            <View style={[styles.scoreBox,{flex: 1}]}>
+              <Text style={styles.scoreText}>{inputdata.id}</Text>
+            </View>
+            <View style={[styles.scoreBox,{flex: 1}]}>
+              <Text style={styles.scoreText}>{inputdata.id}</Text>
+            </View>
+            <View style={[styles.scoreBox,{flex: 2}]}>
+              <Text style={styles.totalscoreText}>{inputdata.id}</Text>
+            </View>
+          </View>
+        </View>
 
       </ScrollView>
     );
@@ -106,13 +109,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  text: {
-    fontSize: 24,
-    color: 'black',
-  },
   box_top: {
     flex: 9,
     borderBottomWidth: 1,
+    flexDirection: 'row',
+  },
+  imgdisplay: {
+    flex: 1,
+    //flexDirection: 'row',
   },
   labelLine: {
     flex: 1,

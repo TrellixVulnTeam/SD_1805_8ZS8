@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 const DataMain = (props) => {
   const { id, name } = props.dataInfo;
@@ -18,30 +18,35 @@ const DataMain = (props) => {
   }
 
   return (
-    <View style={wrapperStyle}>
-      <ImageBackground source={src} style={styles.imgScreen} resizeMode='cover'>
-        <Text style={styles.textStyle}>{comment}</Text>
-      </ImageBackground>
-    </View>
+        <View style={wrapperStyle}>
+          <Image
+            source={src}
+            style={styles.imgScreen}
+          />
+        </View>
   )
 }
 
 const styles = {
   wrapperStyle: {
+    alignItems: 'center',
+    justifyContent: 'center',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    //justifyContent: 'space-between',
     padding: 10
   },
-  textStyle: {
-    fontSize: 30,
-    fontWeight: "600",
-  },
+  // textStyle: {
+  //   fontSize: 30,
+  //   fontWeight: "600",
+  // },
   imgScreen: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
-    height: '100%',
-    flexDirection: 'column',
+    // width: 250,
+    // height: 350
+    width: 200,
+    height: 350,
+    //flexDirection: 'column',
   },
 }
 
