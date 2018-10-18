@@ -65,12 +65,7 @@ _onRefresh = () => {
         >
         <View style={styles.container}>
           <View style={styles.box_top}>
-              <View style={styles.imgdisplay}>
-                <DataMain dataInfo={inputdata} />
-              </View>
-              <View style={styles.imgdisplay}>
-                <DataMain dataInfo={inputdata} />
-              </View>
+            <DataMain dataInfo={inputdata} />
           </View>
 
           <View style={styles.labelLine}>
@@ -112,7 +107,7 @@ const styles = StyleSheet.create({
   box_top: {
     flex: 9,
     borderBottomWidth: 1,
-    flexDirection: 'row',
+    //flexDirection: 'row',
   },
   imgdisplay: {
     flex: 1,
@@ -145,6 +140,12 @@ const styles = StyleSheet.create({
     borderColor: "black",
   },
   labelText: {
+    // backgroundColor: "lightblue",
+    // padding: 10,
+    // borderRadius: 20,
+    // borderWidth: 1,
+    // borderColor: "lightblue",
+    // overflow: "hidden",
     fontSize: 25,
   },
   scoreText: {
