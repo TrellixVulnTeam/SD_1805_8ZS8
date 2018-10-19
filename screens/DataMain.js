@@ -22,16 +22,19 @@ const DataMain = (props) => {
         <View style={styles.wrapperStyle}>
           <Balloon
             style={styles.balloon}
+
             borderColor="#2E86C1"
             backgroundColor="#D6EAF8"
             width={150}
-            height={300}
+            height={200}
             triangleDirection="right"
             borderWidth={2}
             borderRadius={20}
-            triangleSize={15}
+            triangleSize={20}
           >
-            <Text style={styles.textStyle}>Hello world</Text>
+            <View style={styles.display}>
+              <Text style={styles.textStyle}>Hello world</Text>
+            </View>
           </Balloon>
           <Image
             source={src}
@@ -46,6 +49,13 @@ const styles = {
     flex: 1,
     borderBottomWidth: 1,
     flexDirection: 'row',
+    justifyContent:'center',
+    alignItems: 'center',
+  },
+  display: {
+    flex: 1,
+    justifyContent:'center',
+    alignItems: 'center',
   },
   textStyle: {
     fontSize: 30,
@@ -53,9 +63,9 @@ const styles = {
     textAlign: "center",
   },
   imgScreen: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 2,
+    // alignItems: 'center',
+    // justifyContent: 'center',
     width: 250,
     height: 350,
     flexDirection: 'row',
