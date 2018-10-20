@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
   View,
   StyleSheet
 } from 'react-native';
@@ -52,17 +52,19 @@ const RouterComponent = () => {
           iconName='people'
           icon={TabBarIcon}
         />
-        <Scene
-          key='settings'
-          component={Settings}
-          title='Settings'
-          iconName='settings'
-          icon={TabBarIcon}
-        />
+
       </Tabs>
     </Router>
   )
 }
+
+// <Scene
+//   key='settings'
+//   component={Settings}
+//   title='Settings'
+//   iconName='settings'
+//   icon={TabBarIcon}
+// />
 
 const styles = StyleSheet.create({
   tabIconContainerStyle: {
@@ -86,4 +88,3 @@ const styles = StyleSheet.create({
 })
 
 export default RouterComponent;
-
