@@ -10,32 +10,38 @@ const DataMain = (props) => {
   let src = '';
   const score = id //実際は違う
   const comment = name //実際は違う
-  if (score >= 90) {
-    src = require('../assets/images/G.gif')
-  } else if (score >= 60) {
-    src = require('../assets/images/G.gif')
+  if (score >= 81) {
+    src = require('../assets/images/kuma1.png')
+  } else if (score >= 61) {
+    src = require('../assets/images/kuma2.png')
+  } else if (score >= 41){
+    src = require('../assets/images/kuma3.png')
+  } else if (score >= 21){
+    src = require('../assets/images/kuma4.png')
   } else {
-    src = require('../assets/images/rabit.gif');
+    src = require('../assets/images/kuma5.png');
   }
+
 
   return (
         <View style={styles.wrapperStyle}>
-          <Balloon
-            style={styles.balloon}
-
-            borderColor="#2E86C1"
-            backgroundColor="#D6EAF8"
-            width={150}
-            height={200}
-            triangleDirection="right"
-            borderWidth={2}
-            borderRadius={20}
-            triangleSize={20}
-          >
-            <View style={styles.display}>
-              <Text style={styles.textStyle}>Hello world</Text>
-            </View>
-          </Balloon>
+          <View style={styles.display}>
+            <Balloon
+              style={styles.balloon}
+              borderColor="#2E86C1"
+              backgroundColor="#D6EAF8"
+              width={150}
+              height={200}
+              triangleDirection="right"
+              borderWidth={2}
+              borderRadius={20}
+              triangleSize={20}
+            >
+              <View style={styles.textdisplay}>
+                <Text style={styles.textStyle}>こんにちは，{"\n"}かめいたいき</Text>
+              </View>
+            </Balloon>
+          </View>
           <Image
             source={src}
             style={styles.imgScreen}
@@ -53,21 +59,28 @@ const styles = {
     alignItems: 'center',
   },
   display: {
+    flex: 2,
+    justifyContent:'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    //borderWidth: 1,
+  },
+  textdisplay: {
     flex: 1,
     justifyContent:'center',
     alignItems: 'center',
   },
   textStyle: {
-    fontSize: 30,
+    fontSize: 25,
     textAlignVertical: "center",
     textAlign: "center",
   },
   imgScreen: {
-    flex: 2,
+    flex: 3,
     // alignItems: 'center',
     // justifyContent: 'center',
-    width: 250,
-    height: 350,
+    //width: 25,
+    height: 370,
     flexDirection: 'row',
   },
   balloon: {

@@ -69,9 +69,9 @@ _onRefresh = () => {
           </View>
 
           <View style={styles.labelLine}>
-            <LabelBox label={'room'} />
-            <LabelBox label={'smell'} />
-            <LabelBox label={'dust'} />
+            <LabelBox label={'汚さ'} />
+            <LabelBox label={'匂い'} />
+            <LabelBox label={'ほこり'} />
             <LabelBox flex={2} label={'Total'} />
           </View>
 
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   box_top: {
-    flex: 9,
+    flex: 10,
     borderBottomWidth: 1,
     //flexDirection: 'row',
   },
