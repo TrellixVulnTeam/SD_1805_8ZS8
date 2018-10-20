@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 import Balloon from "react-native-balloon";
 
 const DataMain = (props) => {
-  const { id, name } = props.dataInfo;
+  const { id, name, updated_at } = props.dataInfo;
   const { wrapperStyle } = styles;
 
   //スコアによって表示画像を変化
@@ -38,7 +38,7 @@ const DataMain = (props) => {
               triangleSize={20}
             >
               <View style={styles.textdisplay}>
-                <Text style={styles.textStyle}>こんにちは，{"\n"}かめいたいき</Text>
+                <Text style={styles.textStyle}>{updated_at}</Text>
               </View>
             </Balloon>
           </View>
