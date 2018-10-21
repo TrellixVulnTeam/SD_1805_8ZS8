@@ -1,6 +1,10 @@
 # Messy Room
 
+サービス概要
 https://www.dropbox.com/s/f15m9oi3a3w2vci/JPHACKS2.pptx?dl=0
+
+ソース
+https://github.com/KatoLabo
 
 ## 製品概要
 ### X Tech（X → 今回皆さんが選定した好きな言葉に書き換えてください）
@@ -49,6 +53,7 @@ RaspberryPi、臭いセンサー、ホコリセンサー、カメラ
 機械学習モデルを用いて学習し、実際のカメラで撮った画像の乱雑度を判定
  → "inception v3"というモデルを使用
  → フレームワークは"TensorFlow"
+ https://github.com/KatoLabo/ml_framework
 
 サーバとDB連結：Ruby on Rails
 レンタルサーバ：Heroku
