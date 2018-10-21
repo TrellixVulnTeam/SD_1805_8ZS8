@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 transitional//EN","http://www.w3.org/TR/rec-html40/loose.dtd">
+<head>
+  <title>Animation</title>
+  <LINK REL=STYLESHEET href="JSstyle.css" TYPE="text/css">
+</head>
+
+<body onload="Check()">
+<!-- <body style="background: url(room.jpg);" onload="Check()"> -->
+
+<meta name="viewport" content="width=device-width" >
+
+<%#
+<h3 class="title">Hello world.Hello world.Hello world.</h3>
+
+Hello world. <br><br>
+%>
+<%#= @data %> <br><br>
+
+<p><%#= "ID of data is " + @data.id.to_s %></p>
+<p><%#= @data.id %></p>
+
+
+
+<% if @data.id < 50 %>
+  <form>
+    <DIV ID="FlyImg1" style="position:absolute">
+      <IMG name="testimg0" src="images/rabit.gif" id="target">
+    </DIV>
+
+    <DIV name="image2" ID="FlyImg2" style="position:absolute">
+      <IMG name="testimg1" src="images/rabit.gif" id="target">
+    </DIV>
+
+    <DIV name="image3" ID="FlyImg3" style="position:absolute">
+      <IMG name="testimg2" src="images/rabit.gif" id="target">
+    </DIV>
+  </form>
+<% else %>
+
+  <DIV name="image1" ID="FlyImg1" style="position:absolute">
+    <IMG name="testimg0" src="images/rabit.gif" id="target">
+  </DIV>
+
+  <DIV name="image2" ID="FlyImg2" style="position:absolute">
+    <IMG name="testimg1" src="images/rabit.gif" id="target">
+  </DIV>
+
+  <DIV name="image3" ID="FlyImg3" style="position:absolute">
+    <IMG name="testimg2" src="images/rabit.gif" id="target">
+  </DIV>
+
+<% end %>
+
+
+
+<!-- html から JS に引数を渡す -->
+<script type="text/javascript">
+    var image_width = 100
+    var image_height= 100
+</script>
+<!-- <script type="text/javascript" src="note5.js"></script> -->
+<script type="text/javascript" src="note7.js"></script>
+
+
+</body>
+</html>
+

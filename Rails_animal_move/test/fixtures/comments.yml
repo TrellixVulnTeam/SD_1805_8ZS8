@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyText
+  m_total_score: 1
+  m_mess: 1
+  m_smell: 1
+
+two:
+  comment: MyText
+  m_total_score: 1
+  m_mess: 1
+  m_smell: 1

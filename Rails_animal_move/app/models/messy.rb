@@ -1,0 +1,2 @@
+class Messy < ApplicationRecord
+end

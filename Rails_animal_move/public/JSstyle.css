@@ -1,0 +1,66 @@
+/*body {background-image: url("room.jpg"); }*/
+
+BODY,TD { font-size : 10.5pt;
+          font-family : "ƒƒCƒŠƒI", Meiryo, Verdana, Helvetica, "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "‚l‚r ‚oƒSƒVƒbƒN", sans-serif;
+          color : #111111;
+          line-height : 120%;
+ }
+
+body {
+  background-color: #486d46;
+  background-image: url("room.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+/* Desktops */
+<<<<<<< HEAD
+@media (min-width: 992px) and (max-width: 1199px) {
+  IMG{width:  400px;
+      height: 400px;}
+}
+
+/* Tablets */
+=======
+/* Tablets */
+/* Phones */
+
+/*@media (min-width: 992px) and (max-width: 1199px) {
+  IMG{width:  400px;
+      height: 400px;}
+}
+>>>>>>> origin2/master
+@media (min-width: 768px) and (max-width: 991px) {
+  IMG{width:  200px;
+      height: 200px;}
+}
+<<<<<<< HEAD
+
+
+/* Phones */
+=======
+>>>>>>> origin2/master
+@media (max-width: 767px) {
+    IMG{width:  50px;
+        height: 50px;}
+}
+<<<<<<< HEAD
+
+=======
+*/
+>>>>>>> origin2/master
+
+ A:link    {color:#00bbff;}
+ A:active  {color:#00ffbb;}
+ A:hover   {color:#00ffbb;}
+ A:visited {color:#ff6600;}
+ H3.title {font-size:16pt; color:#ff0000; line-height: 150%;}
+ P.example {font-size:11pt; color:#990099; line-height: 130%;}
+ .midashi {font-size:14pt; color:#009900; line-height: 130%;}
+ .midashi2 {font-size:12pt; color:#009900; line-height: 130%;}
+ .attention {font-size:10.5pt; color:#ff0000; line-height: 120%;}
+ .attentionS {font-size:8.0pt; color:#ff0000; line-height: 120%;}
+ .hosoku {font-size:10pt; color:#0000aa; line-height: 120%;}
+ .memo {font-size:9pt; color:#00aa00; line-height: 120%;} 
+ .line {padding: 1em; border: #ff6600 thick ridge; margin: 1em}

@@ -1,0 +1,18 @@
+BODY,TD { font-size : 10.5pt;
+          font-family : "ƒƒCƒŠƒI", Meiryo, Verdana, Helvetica, "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "‚l‚r ‚oƒSƒVƒbƒN", sans-serif;
+          color : #111111;
+          line-height : 120%;
+ }
+ A:link    {color:#00bbff;}
+ A:active  {color:#00ffbb;}
+ A:hover   {color:#00ffbb;}
+ A:visited {color:#ff6600;}
+ H3.title {font-size:16pt; color:#ff0000; line-height: 150%;}
+ P.example {font-size:11pt; color:#990099; line-height: 130%;}
+ .midashi {font-size:14pt; color:#009900; line-height: 130%;}
+ .midashi2 {font-size:12pt; color:#009900; line-height: 130%;}
+ .attention {font-size:10.5pt; color:#ff0000; line-height: 120%;}
+ .attentionS {font-size:8.0pt; color:#ff0000; line-height: 120%;}
+ .hosoku {font-size:10pt; color:#0000aa; line-height: 120%;}
+ .memo {font-size:9pt; color:#00aa00; line-height: 120%;} 
+ .line {padding: 1em; border: #ff6600 thick ridge; margin: 1em}
