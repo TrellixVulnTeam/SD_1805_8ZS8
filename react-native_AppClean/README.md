@@ -16,15 +16,13 @@
       - Grove-Dust Senso
       - においセンサ　TGS2450
   - きれいさ，におい，ほこりのスコアやそれらのスコアから総合的に算出された「とくてん」によって，くまのアニメーション画像が変化
-    - 具体的には，とくてんに応じて以下のように変化する
-      <img src="https://user-images.githubusercontent.com/40264020/47290090-c36ccc00-d638-11e8-9994-e597bfaccb5e.png" width="700px">
-      -くまのアニメーションはLive2Dを用いて作成
+    - 具体的には，とくてんに応じて以下のように変化する(くまのアニメーションはLive2Dを用いて作成)  
+    <img src="https://user-images.githubusercontent.com/40264020/47290090-c36ccc00-d638-11e8-9994-e597bfaccb5e.png" width="700px">
 
 - 工夫した点
  - 画面更新をスクロールでできるようにした
  - 親しみやすいUIデザイン
  - くまのアニメーション作成にLive2Dを使用
- 
  
 ## 画面2
 - 画面の機能の紹介
